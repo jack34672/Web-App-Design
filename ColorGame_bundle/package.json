@@ -2,5 +2,15 @@
   "main": "index.html",
   "dependencies": {
     "vue": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-recommended": "^4.0.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --progress --mode development"
   }
 }
