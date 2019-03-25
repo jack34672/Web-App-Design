@@ -11,9 +11,10 @@ function init () {
 	reset();
 	banner();
 	grid();
-	console.log(global.turn);
+	console.log(global.turn);_
 }
 
 global.resetButton.addEventListener('click', () => {
 	reset();
+	banner();
 });

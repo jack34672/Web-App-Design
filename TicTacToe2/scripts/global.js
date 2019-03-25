@@ -21,6 +21,10 @@ class global {
 		this.cell32 = document.querySelector('.cell32');
 		this.cell33 = document.querySelector('.cell33');
 		this.cell=document.querySelector('.cell');
+		this.cirscoredisplay = document.querySelector('.circlescore');
+		this.croscoredisplay = document.querySelector('.crossscore');
+		this.cirscore = 0;
+		this.croscore = 0;
 	}
 }
 

@@ -1,5 +1,4 @@
 import global from './global';
-import turn from './turn';
 
 export default function cell () {
 	global.cell11.addEventListener('click', () => {
@@ -8,12 +7,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell11.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell11.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}
 		}
@@ -25,12 +22,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell12.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell12.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}
 		}
@@ -42,12 +37,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell13.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell13.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}
 		}
@@ -59,12 +52,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell21.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell21.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}
 		}
@@ -76,12 +67,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell22.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell22.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}
 	}
@@ -93,12 +82,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell23.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell23.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}
 		}
@@ -110,12 +97,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell31.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell31.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}}
 	}
@@ -126,12 +111,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell32.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell32.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}}
 	}
@@ -142,12 +125,10 @@ export default function cell () {
 		if(global.turn===0){
 			global.cell33.innerHTML="O";
 			global.turn=1;
-			turn();
 			console.log(global.turn);
 		}else{
 			global.cell33.innerHTML="X";
 			global.turn=0;
-			turn();
 			console.log(global.turn);
 		}}
 	}
