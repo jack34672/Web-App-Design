@@ -30,7 +30,7 @@ function checkwin (){
 	((global.cell31.innerHTML==="X")&&(global.cell32.innerHTML==="X")&&(global.cell33.innerHTML==="X"))||
 	((global.cell11.innerHTML==="X")&&(global.cell22.innerHTML==="X")&&(global.cell33.innerHTML==="X"))||
 	((global.cell13.innerHTML==="X")&&(global.cell22.innerHTML==="X")&&(global.cell31.innerHTML==="X"))){
-	 if(!global.gameOver)global.cirscore++;
+	 if(!global.gameOver)global.croscore++;
 	 global.gameOver = true;
 	 global.messageDisplay.innerHTML = "winner is cross!!";
 	 if(!global.gameOver)global.croscore++;
