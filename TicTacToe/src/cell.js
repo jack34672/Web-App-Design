@@ -11,31 +11,44 @@ export default class Cell extends Component {
         return '.cell';
     }
 
+    static random(){
+        return cellnumgenerate();
+    }
+
+
     constructor(root) {
         super(root);
-
+        
         root.addEventListener("click", this.handleDomClick.bind(this));
         this.reset();
     }
 
     reset() {
-        this.fadeIn(this.color);
+        this.cellnum = 2;
+        this.root.style.backgroundImage="url(../img/2.png)";
     }
 
-    getColor() {
-        return this.color;
+    getCellnum (){
+        return this.cellnum ;
     }
 
-    fadeOut() {
-        this.root.style.opacity = 0;
+    circle(){
+        this.cellnum=0;
+        this.root.style.backgroundImage="url(../img/0.png)";
     }
 
-    fadeIn(color) {
-        this.root.style.backgroundColor = color;
-        this.root.style.opacity = 1;
+    cross(){
+        this.cellnum=1;
+        this.root.style.backgroundImage="url(../img/1.png)";
     }
 
     handleDomClick(e) {
-        this.fire('click', this.color);
+        this.fire('click', this.cellnum);
     }
 }
+var a=0;
+    function cellnumgenerate(){
+        a++;
+        console.log(a);
+        return a;
+    }

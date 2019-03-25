@@ -1,10 +1,11 @@
 import Component from  './component.js';
-import Navbar from  './navbar.js';
-import Board from  './board.js';
-import Deck from  './deck.js';
+import Banner from  './banner.js';
+import Grid from  './grid.js';
 import Reset from  './reset.js';
 
 import './main.css';
+
+var timer;
 
 export default class Main extends Component {
     static getRootClass() {
@@ -14,39 +15,54 @@ export default class Main extends Component {
     constructor(root) {
         super(root);
 
-        this.navbar = new Navbar(root.querySelector('.navbar'));
-
-        this.deck = new Deck(root.querySelector('.deck'));
-        this.deck.on('CircleClick', this.handleDeckCircleClick.bind(this));
-        this.deck.on('CrossClick', this.handleDeckCrossClick.bind(this));
-        this.deck.on('endClick', this.handleDeckendClick.bind(this));
-
-        this.board = new Board(root.querySelector('.board'), this.deck.getPickedColor());
+        this.grid = new Grid(root.querySelector('.grid'));
+        this.grid.on('crosswinClick', this.handleGridCrossWinClick.bind(this));
+        this.grid.on('circlewinClick', this.handleGridCircleWinClick.bind(this));
+        this.grid.on('circleturnClick', this.handleGridCircleTurnClick.bind(this));
+        this.grid.on('crossturnClick', this.handleGridCrossTurnClick.bind(this));
+        this.grid.on('drawClick', this.handleGridDrawClick.bind(this));
+        this.banner = new Banner(root.querySelector('.banner'));
 
         this.reset = new Reset(root.querySelector('.reset'));
         this.reset.on('click', this.handleRestClick.bind(this));
     }
 
-    handleDeckCircleClick(firer) {
-        this.board.circleMessage();
+    handleGridCrossWinClick(firer) {
+        this.banner.showCrossWinMessage();
+        this.banner.handleCrossScored();
+        this.handlereset();
     }
 
-    handleDeckCrossClick(firer) {
-        this.board.crossMessage();
+    handleGridCircleWinClick(firer) {
+        this.banner.showCircleWinMessage();
+        this.banner.handleCircleScored();
+        this.handlereset();
     }
 
-    handleDeckendClick(firer) {
-        this.board.showendMessage();
-        this.reset.showPlayAgain();
+    handleGridCircleTurnClick(firer) {
+        this.banner.showCircleTurnMessage();
+    }
+
+    handleGridCrossTurnClick(firer) {
+        this.banner.showCrossTurnMessage();
+    }
+
+    handleGridDrawClick(firer) {
+        this.banner.showDrawMessage();
+        this.handlereset();
     }
 
     handleRestClick() {
-        this.root.style.backgroundColor = "#232323";
-
-        this.deck.reset();
-        this.board.reset(this.deck.getPickedColor());
+        this.grid.reset();
+        this.banner.reset();
         this.reset.reset();
     }
+
+    handlereset(){
+        this.grid.reset();
+        this.reset.reset();
+    }
+
 }
 
 window.onload = function() {

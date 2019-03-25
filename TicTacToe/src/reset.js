@@ -20,7 +20,7 @@ export default class Reset extends Component {
     }
 
     reset() {
-        this.resetDisplay.textContent = "New Color";
+        this.resetDisplay.textContent = "Reset";
     }
 
     showPlayAgain() {
