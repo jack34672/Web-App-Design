@@ -17,8 +17,10 @@ export default class Gird extends Component {
     constructor(root) {
         super(root);
         this.gameOver = false;
+        this.gameOver2 = false;
         this.cells = [];
         this.turn = 0;
+    //    root.addEventListener("click", this.handleGridClick.bind(this));
         const els = root.querySelectorAll(Cell.getRootClass());
         for (let el of els) {
             const cell = new Cell(el);
@@ -29,14 +31,21 @@ export default class Gird extends Component {
 
     reset() {
         this.gameOver = false;
+        this.gameOver2 = false;
         this.turn=0;
         for (let cell of this.cells)
             cell.reset();
     }
 
     handleCellClick(firer, cellnum ) {
-        if (this.gameOver)
+        console.log(this.gameOver2);
+        if(this.gameOver2)
             return;
+        if (this.gameOver){
+            this.gameOver2=true;
+            this.fire('gameClick');
+        //    return;
+        }else{
         if (cellnum===2){
             if(this.turn===0){
                 firer.circle();
@@ -53,6 +62,7 @@ export default class Gird extends Component {
             }
         }else{
         }
+        }
         this.checkwin();
     }
 
@@ -60,6 +70,10 @@ export default class Gird extends Component {
         console.log(this.cells[0].cellnum, this.cells[1].cellnum, this.cells[2].cellnum);
         console.log(this.cells[3].cellnum, this.cells[4].cellnum, this.cells[5].cellnum);
         console.log(this.cells[6].cellnum, this.cells[7].cellnum, this.cells[8].cellnum);
+    }
+
+    handleGridClick(e) {
+        this.fire('gameclick');
     }
 
     checkwin() {

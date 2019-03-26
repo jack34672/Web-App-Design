@@ -60,4 +60,8 @@ export default class Banner extends Component {
         this.role.showCrossScored();
     }
 
+    handleResetCell(){
+        this.role.showResetCell();
+    }
+
 }

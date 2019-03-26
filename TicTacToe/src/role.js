@@ -20,6 +20,7 @@ export default class Role extends Component {
 
         this.circlescoreDisplay = root.querySelector('.circle');
         this.crossscoreDisplay = root.querySelector('.cross');
+        this.resetcellDisplay = root.querySelector('.resetcell');
         this.reset();
     }
 
@@ -40,5 +41,9 @@ export default class Role extends Component {
         console.log(".role O score");
         Xscore++;
         this.crossscoreDisplay.textContent="X="+ Xscore;
+    }
+
+    showResetCell(){
+        this.resetcellDisplay.textContent="press cell to reset";
     }
 }

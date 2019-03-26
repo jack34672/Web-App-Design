@@ -21,6 +21,7 @@ export default class Main extends Component {
         this.grid.on('circleturnClick', this.handleGridCircleTurnClick.bind(this));
         this.grid.on('crossturnClick', this.handleGridCrossTurnClick.bind(this));
         this.grid.on('drawClick', this.handleGridDrawClick.bind(this));
+        this.grid.on('gameClick', this.handleGridGameClick.bind(this));
         this.banner = new Banner(root.querySelector('.banner'));
 
         this.reset = new Reset(root.querySelector('.reset'));
@@ -30,13 +31,15 @@ export default class Main extends Component {
     handleGridCrossWinClick(firer) {
         this.banner.showCrossWinMessage();
         this.banner.handleCrossScored();
-        this.handlereset();
+        this.banner.handleResetCell();
+    //    this.handlereset();
     }
 
     handleGridCircleWinClick(firer) {
         this.banner.showCircleWinMessage();
         this.banner.handleCircleScored();
-        this.handlereset();
+        this.banner.handleResetCell();
+    //    this.handlereset();
     }
 
     handleGridCircleTurnClick(firer) {
@@ -49,7 +52,11 @@ export default class Main extends Component {
 
     handleGridDrawClick(firer) {
         this.banner.showDrawMessage();
+    }
+
+    handleGridGameClick(firer) {
         this.handlereset();
+        this.banner.role.resetcellDisplay.textContent="_";
     }
 
     handleRestClick() {

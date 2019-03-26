@@ -46,9 +46,3 @@ export default class Cell extends Component {
         this.fire('click', this.cellnum);
     }
 }
-var a=0;
-    function cellnumgenerate(){
-        a++;
-        console.log(a);
-        return a;
-    }

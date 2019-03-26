@@ -20,7 +20,7 @@ export default class Reset extends Component {
     }
 
     reset() {
-        this.resetDisplay.textContent = "Reset";
+        this.resetDisplay.textContent = "Reset Score";
     }
 
     showPlayAgain() {
