@@ -63,6 +63,7 @@ export default class Main extends Component {
         this.grid.reset();
         this.banner.reset();
         this.reset.reset();
+        this.banner.role.resetcellDisplay.textContent="_";
     }
 
     handlereset(){
